@@ -26,8 +26,8 @@ var orm = {
     },
 
 
-    updateOne: function(tableInput, colVals, condition, cb) {
-        var queryString = `UPDATE ${tableInput} SET ${colVals} = $ ${condition}`;
+    updateOne: function(tableInput, cols,boolean, condition, cb) {
+        var queryString = `UPDATE ${tableInput} SET ${cols} = ${boolean} ${condition}`;
         connection.query(queryString, function (err, result) {
            if (err) {
                throw err;
