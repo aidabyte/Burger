@@ -26,8 +26,8 @@ var orm = {
     },
 
 
-    updateOne: function(tableInput, cols, vals, cb) {
-        var queryString = `SELECT * FROM ${tableInput} ${cols} ${vals};`
+    updateOne: function(tableInput, colVals, condition, cb) {
+        var queryString = `UPDATE ${tableInput} SET ${colVals} = $ ${condition}`;
         connection.query(queryString, function (err, result) {
            if (err) {
                throw err;
@@ -38,7 +38,8 @@ var orm = {
 
 }
 
-modeule.export = orm;
+module.exports = orm;
+
 
 
 
