@@ -38,6 +38,8 @@ var orm = {
 
 }
 
+modeule.export = orm;
+
 
 
 
