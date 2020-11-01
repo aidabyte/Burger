@@ -22,6 +22,28 @@ var orm = {
            } 
            cb(result);
         });
+    
+    },
+
+
+    updateOne: function(tableInput, cols, vals, cb) {
+        var queryString = `SELECT * FROM ${tableInput} ${cols} ${vals};`
+        connection.query(queryString, function (err, result) {
+           if (err) {
+               throw err;
+           } 
+           cb(result);
+        });
     }
 
 }
+
+
+
+
+
+
+
+
+
+    
