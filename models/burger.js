@@ -7,8 +7,8 @@ var burger = {
         });
     },
 
-    insertOne: function (vals, cb) {
-        orm.insertOne("burgers", "burger_name" ,vals, function (res) {
+    insertOne: function (cols, vals, cb) {
+        orm.insertOne("burgers", cols ,vals, function (res) {
             cb(res);
         }
 
@@ -19,9 +19,15 @@ var burger = {
         orm.updateOne("burgers", "devoured", boolean, condition, function (res) {
             cb(res);
         })
-    }
-    
+    },
 
+    deleteOne: function(condition,cb) {
+        orm.deleteOne("burgers", condition, function(res) {
+            cb(res);
+        })
+    }
+
+    
 }
 
 module.exports = burger;
